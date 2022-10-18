@@ -13,7 +13,7 @@ const Main = () => {
             <Header></Header>
             <Container>
                 <Row>
-                    <Col xl={2}>
+                    <Col xl={2} className="d-none d-lg-block">
                         <LeftSideNav></LeftSideNav>
                     </Col>
                     <Col xl={7}>
