@@ -1,31 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Main from "../src/Main/Main"
-import Home from './Page/Home/Home';
-import Category from './Page/Category/Category/Category';
-import News from './Page/News/News/News';
+import { RouterProvider } from 'react-router-dom';
 
-const routes = createBrowserRouter([
-  {
-    path: "/",
-    element: <Main></Main>,
-    children: [
-      {
-        path: "/",
-        element: <Home></Home>
-      },
-      {
-        path: "/category/:id",
-        element: <Category></Category>
-      },
-      {
-        path: "/news/:id",
-        element: <News></News>
-      }
-    ]
-  }
-])
+import routes from './Routes/Routes/Routes';
+
+
 
 function App() {
   return (
