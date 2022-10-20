@@ -19,6 +19,11 @@ const routes = createBrowserRouter([
                 loader: () => fetch("http://localhost:5000/news")
             },
             {
+                path: "/home",
+                element: <Home></Home>,
+                loader: () => fetch("http://localhost:5000/news")
+            },
+            {
                 path: "/category/:id",
                 element: <Category></Category>,
                 loader: async ({params}) => {
