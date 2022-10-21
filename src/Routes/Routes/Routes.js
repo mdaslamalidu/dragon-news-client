@@ -4,6 +4,7 @@ import Category from "../../Page/Category/Category/Category";
 import Home from "../../Page/Home/Home";
 import Login from "../../Page/Login/Login";
 import News from "../../Page/News/News/News";
+import Profile from "../../Page/Others/Profile/Profile";
 import TermsAndConditions from "../../Page/Others/TermsAndConditions";
 import Register from "../../Page/Register/Register";
 import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
@@ -48,6 +49,10 @@ const routes = createBrowserRouter([
             {
                 path: "/terms",
                 element: <TermsAndConditions></TermsAndConditions>
+            },
+            {
+                path: "/profile",
+                element: <PrivateRoutes><Profile></Profile></PrivateRoutes>
             }
         ]
     }
