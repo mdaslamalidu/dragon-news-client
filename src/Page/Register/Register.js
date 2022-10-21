@@ -1,11 +1,12 @@
 import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Register = () => {
-    const { createUser, updateName } = useContext(AuthContext)
+    const { createUser, updateName, veryfyEmail } = useContext(AuthContext)
     const [error, setError] = useState("");
     const [accept, setAccept] = useState(false)
 
@@ -22,8 +23,10 @@ const Register = () => {
             const user = result.user;
             console.log(user)
             updateName(name, photo).then(() => {}).catch(e => console.error(e))
+            veryfyEmail().then(() => {}).catch(error => console.error(error))
             setError("")
             form.reset()
+            toast('check your email for verification')
         })
         .catch(e => {
             console.error(e)
