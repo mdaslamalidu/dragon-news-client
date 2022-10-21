@@ -37,14 +37,16 @@ const AuthProvider = ({children}) => {
     } 
 
     const veryfyEmail = () => {
-        return sendEmailVerification();
+        return sendEmailVerification(auth.currentUser);
     }
 
-    const userInfo = { user, createWithGoogle, logOut, createUser, signInWithEamil, updateName, loading, veryfyEmail }
+    const userInfo = { user, createWithGoogle, logOut, createUser, signInWithEamil, updateName, loading, veryfyEmail, setLoading }
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-            setUser(currentUser)
+            if(currentUser === null || currentUser.emailVerified){
+                setUser(currentUser)
+            }
             setLoading(false)
         });
 

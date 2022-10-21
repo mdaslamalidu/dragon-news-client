@@ -7,7 +7,7 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 
 const Login = () => {
-    const { signInWithEamil } = useContext(AuthContext)
+    const { signInWithEamil, setLoading } = useContext(AuthContext)
     const [error, setError] = useState("");
     const navigate = useNavigate();
     const location = useLocation();
@@ -34,6 +34,9 @@ const Login = () => {
         .catch(error => {
             console.error(error)
             setError(error.message)
+        })
+        .finally(() => {
+            setLoading(false)
         })
     }
 

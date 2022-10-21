@@ -4,7 +4,6 @@ import NewsSummaryCart from '../../Shared/NewsSummaryCart/NewsSummaryCart';
 
 const Category = () => {
     const category = useLoaderData();
-    console.log(category)
     return (
         <div>
             <h2>All Category {category.length}</h2>
